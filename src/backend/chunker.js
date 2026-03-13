@@ -1,11 +1,21 @@
-function chunkText(text, chunkSize) {
-  const words = text.split(" ");
-  let chunks = [];
+function createChunks(text, chunkSize, overlap) {
 
-  for (let i = 0; i < words.length; i += chunkSize) {
-    chunks.push(words.slice(i, i + chunkSize).join(" "));
+  const words = text.split(" ");
+  const chunks = [];
+
+  let start = 0;
+
+  while (start < words.length) {
+
+    const end = start + chunkSize;
+
+    const chunk = words.slice(start, end).join(" ");
+    chunks.push(chunk);
+
+    start += chunkSize - overlap;
   }
+
   return chunks;
 }
 
-module.exports = chunkText;
+module.exports = createChunks;

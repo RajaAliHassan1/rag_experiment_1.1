@@ -11,6 +11,9 @@ function Dashboard() {
       const response = await fetch("http://localhost:5000/run-experiment");
       const data = await response.json();
       setResults(data.results);
+
+      console.log("recieved")
+      console.log(data.results)
     } catch (error) {
       console.error("Experiment failed", error);
     }
@@ -55,6 +58,7 @@ function Dashboard() {
           <tr>
             <th style={{ padding: "14px", textAlign: "left" }}>Chunk Size</th>
             <th style={{ padding: "14px", textAlign: "left" }}>Chunks Created</th>
+            <th style={{ padding: "14px", textAlign: "left" }}>Overlap</th>
             <th style={{ padding: "14px", textAlign: "left" }}>Chunks</th>
           </tr>
         </thead>
@@ -72,6 +76,8 @@ function Dashboard() {
               </td>
 
               <td style={{ padding: "16px" }}>{r.chunksCreated}</td>
+
+              <td style={{ padding: "16px" }}>{r.overlap}</td>
 
               <td style={{ padding: "16px" }}>
                 {r.chunksText.map((chunk, i) => (
@@ -92,6 +98,8 @@ function Dashboard() {
                   </div>
                 ))}
               </td>
+
+              
             </tr>
           ))}
         </tbody>
