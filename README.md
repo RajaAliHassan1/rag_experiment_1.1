@@ -1,17 +1,12 @@
-# Getting Started with Create React App
+## npm install
+## npm install express cors
+## npm install pdf-parse@1.1.1
+## npm install @xenova/transformers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Start Server**
 
-## Available Scripts
+## node src/backend/server.js
 
-In the project directory, you can run:
+**Open new terminal and run UI**
 
-### `npm install`
-
-### `node src/backend/server.js`
-
-New Terminal 
-
-
-### `npm start`
-
+## npm start
